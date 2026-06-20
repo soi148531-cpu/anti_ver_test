@@ -1,9 +1,9 @@
 /* ============================================
-   HERE WE GO — index.js
-   Interactions & Animations
+   출발합니다 — index.js
+   인터랙션 & 애니메이션
    ============================================ */
 
-// ---- Particle System ----
+// ---- 파티클 시스템 ----
 function createParticles() {
   const container = document.getElementById('particles');
   const colors = ['#4d9fff', '#a855f7', '#22d3ee', '#ffffff'];
@@ -32,7 +32,7 @@ function createParticles() {
   }
 }
 
-// ---- Scroll Reveal ----
+// ---- 스크롤 리빌 ----
 function initReveal() {
   const targets = document.querySelectorAll('.card, .mission-inner > *, .launch-inner > *');
   targets.forEach(el => el.classList.add('reveal'));
@@ -49,7 +49,7 @@ function initReveal() {
   targets.forEach(el => observer.observe(el));
 }
 
-// ---- Nav Scroll Effect ----
+// ---- 네비게이션 스크롤 효과 ----
 function initNav() {
   const nav = document.getElementById('nav');
   window.addEventListener('scroll', () => {
@@ -61,9 +61,9 @@ function initNav() {
   });
 }
 
-// ---- Countdown Timer ----
+// ---- 카운트다운 타이머 ----
 function initCountdown() {
-  // Target: 7 days from now
+  // 목표: 지금으로부터 7일 후
   const target = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000);
 
   function pad(n) { return String(n).padStart(2, '0'); }
@@ -88,7 +88,7 @@ function initCountdown() {
   setInterval(update, 1000);
 }
 
-// ---- Rocket Hover Flame ----
+// ---- 로켓 호버 불꽃 ----
 function initRocketHover() {
   const rocketWrap = document.getElementById('hero-rocket');
   const flame = document.getElementById('rocket-flame');
@@ -107,31 +107,31 @@ function initRocketHover() {
   });
 }
 
-// ---- Launch Button ----
+// ---- 발사 버튼 ----
 function triggerLaunch() {
   const overlay = document.getElementById('launch-overlay');
   const rocketImg = document.getElementById('rocket-img');
   const flame = document.getElementById('rocket-flame');
 
-  // Activate flame
+  // 불꽃 활성화
   flame.classList.add('active');
   rocketImg.style.transition = 'transform 1.2s cubic-bezier(0.2, 0, 0.4, 1), opacity 1s ease';
   rocketImg.style.transform = 'translateY(-120vh) rotate(5deg)';
   rocketImg.style.opacity = '0';
 
-  // Show overlay
+  // 오버레이 표시
   setTimeout(() => {
     overlay.classList.add('active');
   }, 800);
 
-  // Reset after 2.5s
+  // 2.5초 후 리셋
   setTimeout(() => {
     overlay.classList.remove('active');
     flame.classList.remove('active');
     rocketImg.style.transition = 'none';
     rocketImg.style.transform = '';
     rocketImg.style.opacity = '1';
-    // Re-enable float animation
+    // 플로트 애니메이션 재활성화
     setTimeout(() => {
       rocketImg.style.transition = '';
       rocketImg.style.animation = 'rocketFloat 4s ease-in-out infinite';
@@ -139,7 +139,7 @@ function triggerLaunch() {
   }, 2800);
 }
 
-// ---- Email Form ----
+// ---- 이메일 폼 ----
 function handleSubmit(e) {
   e.preventDefault();
   const form = document.getElementById('email-form');
@@ -148,7 +148,7 @@ function handleSubmit(e) {
   success.style.display = 'block';
 }
 
-// ---- Mouse Parallax on Rocket ----
+// ---- 마우스 시차 효과 (로켓) ----
 function initParallax() {
   const rocket = document.getElementById('hero-rocket');
   document.addEventListener('mousemove', (e) => {
@@ -160,7 +160,7 @@ function initParallax() {
   });
 }
 
-// ---- Smooth scroll for "Learn More" ----
+// ---- "더 알아보기" 부드러운 스크롤 ----
 document.addEventListener('DOMContentLoaded', () => {
   const learnBtn = document.getElementById('btn-learn');
   if (learnBtn) {
@@ -169,7 +169,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Close overlay on click
+  // 오버레이 클릭 시 닫기
   const overlay = document.getElementById('launch-overlay');
   overlay.addEventListener('click', () => overlay.classList.remove('active'));
 
