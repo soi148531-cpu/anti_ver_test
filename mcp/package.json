@@ -1,0 +1,22 @@
+{
+  "name": "antigravity-asset-mcp",
+  "version": "1.0.0",
+  "description": "MCP server for generating minimal isometric 3D assets with Auto background removal via remove.bg",
+  "type": "module",
+  "main": "server.mjs",
+  "bin": {
+    "antigravity-asset-mcp": "./server.mjs"
+  },
+  "scripts": {
+    "start": "node server.mjs",
+    "dev": "node --watch server.mjs"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.12.1"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": ["mcp", "image-generation", "isometric", "anti-gravity", "remove-bg"],
+  "license": "MIT"
+}

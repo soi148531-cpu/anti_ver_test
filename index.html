@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Here We Go 🚀</title>
+  <meta name="description" content="Here We Go — Launching into something extraordinary. A minimal, futuristic one-page experience." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="index.css" />
+</head>
+<body>
+
+  <!-- Stars Background -->
+  <div class="stars" id="stars"></div>
+  <div class="stars2" id="stars2"></div>
+  <div class="stars3" id="stars3"></div>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <div class="nav-logo">🚀 HWG</div>
+    <div class="nav-links">
+      <a href="#hero" class="nav-link" id="nav-hero">Home</a>
+      <a href="#mission" class="nav-link" id="nav-mission">Mission</a>
+      <a href="#launch" class="nav-link" id="nav-launch">Launch</a>
+    </div>
+  </nav>
+
+  <!-- Truck Banner Strip -->
+  <div class="truck-banner" id="truck-banner">
+    <div class="truck-banner-inner">
+      <img src="green_truck_nobg.png" alt="Green Delivery Truck" class="truck-banner-img" />
+      <span class="truck-banner-text">🚚 Now Delivering Extraordinary Experiences</span>
+      <img src="green_truck_nobg.png" alt="" class="truck-banner-img truck-flip" />
+      <span class="truck-banner-text">✦ Here We Go ✦</span>
+      <img src="green_truck_nobg.png" alt="" class="truck-banner-img" />
+      <span class="truck-banner-text">🚚 Now Delivering Extraordinary Experiences</span>
+      <img src="green_truck_nobg.png" alt="" class="truck-banner-img truck-flip" />
+      <span class="truck-banner-text">✦ Here We Go ✦</span>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <div class="hero-content">
+      <div class="badge" id="badge">✦ Ready for Liftoff</div>
+      <h1 class="hero-title" id="hero-title">
+        Here<br />
+        <span class="hero-title-accent">We Go.</span>
+      </h1>
+      <p class="hero-subtitle" id="hero-subtitle">
+        Something extraordinary is launching.<br />
+        Strap in. The countdown has begun.
+      </p>
+      <div class="hero-cta" id="hero-cta">
+        <div class="cta-rocket-wrap" id="cta-rocket-wrap">
+          <img src="rocket_nobg.png" alt="rocket" class="cta-rocket-img" id="cta-rocket-img" />
+          <button class="btn-primary" id="btn-launch" onclick="triggerLaunch()">Launch Now</button>
+        </div>
+        <button class="btn-ghost" id="btn-learn">Learn More ↓</button>
+      </div>
+    </div>
+
+    <div class="hero-rocket" id="hero-rocket">
+      <div class="rocket-glow"></div>
+      <img src="rocket_nobg.png" alt="Isometric Rocket" class="rocket-img" id="rocket-img" />
+      <div class="rocket-flame" id="rocket-flame">
+        <div class="flame f1"></div>
+        <div class="flame f2"></div>
+        <div class="flame f3"></div>
+      </div>
+    </div>
+
+    <!-- Floating particles -->
+    <div class="particles" id="particles"></div>
+
+    <div class="scroll-hint" id="scroll-hint">
+      <span>Scroll</span>
+      <div class="scroll-arrow"></div>
+    </div>
+  </section>
+
+  <!-- Mission Section -->
+  <section class="mission" id="mission">
+    <div class="mission-inner">
+      <div class="section-label">Our Mission</div>
+      <h2 class="section-title">Built for the<br /><span class="accent">Bold & Ambitious</span></h2>
+      <div class="cards" id="cards">
+        <div class="card" id="card-1">
+          <div class="card-icon">⚡</div>
+          <h3>Lightning Fast</h3>
+          <p>From zero to orbit in record time. No delays, no excuses — just pure momentum.</p>
+        </div>
+        <div class="card card-highlight" id="card-2">
+          <div class="card-icon">🌌</div>
+          <h3>Infinite Scale</h3>
+          <p>The universe is big. Your ambitions should be bigger. We scale without limits.</p>
+        </div>
+        <div class="card" id="card-3">
+          <div class="card-icon">🎯</div>
+          <h3>Precision Built</h3>
+          <p>Every pixel, every line of code — engineered with obsessive attention to craft.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Launch CTA Section -->
+  <section class="launch" id="launch">
+    <div class="launch-inner">
+      <div class="countdown-wrapper" id="countdown-wrapper">
+        <div class="countdown-item"><span class="countdown-num" id="c-days">07</span><span class="countdown-label">Days</span></div>
+        <div class="countdown-sep">:</div>
+        <div class="countdown-item"><span class="countdown-num" id="c-hours">14</span><span class="countdown-label">Hours</span></div>
+        <div class="countdown-sep">:</div>
+        <div class="countdown-item"><span class="countdown-num" id="c-mins">32</span><span class="countdown-label">Mins</span></div>
+        <div class="countdown-sep">:</div>
+        <div class="countdown-item"><span class="countdown-num" id="c-secs">00</span><span class="countdown-label">Secs</span></div>
+      </div>
+      <h2 class="launch-title">The Wait Is Almost Over</h2>
+      <p class="launch-sub">Join the waitlist. Be the first to experience liftoff.</p>
+      <form class="email-form" id="email-form" onsubmit="handleSubmit(event)">
+        <input type="email" class="email-input" id="email-input" placeholder="your@email.com" required />
+        <button type="submit" class="btn-primary" id="btn-submit">Get Early Access</button>
+      </form>
+      <div class="success-msg" id="success-msg">🚀 You're on the list! We'll see you at launch.</div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer" id="footer">
+    <div class="footer-logo">🚀 HERE WE GO</div>
+    <p class="footer-copy">© 2026 Here We Go. All systems go.</p>
+  </footer>
+
+  <!-- Launch Overlay -->
+  <div class="launch-overlay" id="launch-overlay">
+    <div class="launch-text" id="launch-text">🚀 HERE WE GO!</div>
+  </div>
+
+  <script src="index.js"></script>
+</body>
+</html>
